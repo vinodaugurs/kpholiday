@@ -1,0 +1,375 @@
+/*
+header.php css   Start
+*/
+
+.col-centered{ 
+    float:none;
+    margin: 0 auto;
+}
+.Top-Header{ background-color:#ffffff; padding:10px 0 0px 0}
+.Header-Banner{ 
+    background-image:url(http://easeyatra.com/yatra/assets/img/bg-banner1.jpg); 
+    background-repeat:no-repeat; 
+    background-size:cover; 
+    background-repeat:no-repeat; height:500px;
+}
+.search-tab-content{
+    background: url(http://easeyatra.com/yatra/assets/img/search-box.png) repeat 0 0;
+    padding: 12px 18px 12px 18px;
+    display: block;
+    min-height: 175px; 
+    /*color:#fff !important;*/
+}
+
+ul.search-tabs li.active a{
+    background: url(http://easeyatra.com/yatra/assets/img/search-box.png) repeat 0 0; 
+    color:#fff; 
+    font-size:13px;
+
+}
+
+.search-form{ 
+    position:inherit; 
+    bottom:0; 
+    /*top:385px;*/
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+    /****************
+
+     ** NEW STYLES **
+
+     ****************/
+    list-style: none; /** Remove list bullets */
+    /* width: 100%;*/ /** Set the width to 100% of it's parent */
+    padding: 0;
+}
+
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+/** Button Styles **/
+
+.dropdown button {
+    background: #FF6223;
+    color: #FFFFFF;
+    border: none;
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 1em;
+}
+
+
+
+/** List Item Styles **/
+
+.dropdown a {
+    display: block;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    /* background: #fff;*/
+    color: #333333;
+}
+
+
+
+/** List Item Hover Styles **/
+
+.dropdown a:hover {
+    background: #BBBBBB;
+}
+
+.Btn-Explore{ 
+    font-size:14.5px; 
+    color:#00a3d1;
+    font-weight: 600;	
+    margin-top: 10px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.Btn-Explore2{ 
+    font-size:14.5px; 
+    color:#00a3d1;
+    font-weight: 600;	
+    margin-top: 0px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+ul .Explore-item{
+
+}
+
+.Explore-item>li>a
+{
+    border-bottom:1px solid #CCC;  
+    padding:10px 10px 10px 10px; width:200px;
+}
+
+
+.My-Account>li>a{
+    width:160px;
+    padding:10px 10px 10px 10px; 
+}
+
+.M-A-Login{ 
+    /*width:50px !important; */
+    color:#fff !important; 
+    float:left !important;
+    background-color:#00a3d1 !important; 
+    text-align:center !important; 
+    border-bottom:1px solid #fff;	
+}
+
+.M-A-Signup{
+    /* width:60px !important; */
+    color:#fff !important; 
+    float:left !important; 
+    background-color:#00a3d1 !important;
+    text-align:center !important;	
+}
+
+ul.search-tabs li a{ 
+    background-color:#00a3d1;
+    color:#fff;
+    opacity: 0.8 !important; 
+    font-size:13px;
+}
+
+
+
+.button{}
+
+
+.footer-Btm{ text-align:center; font-size:13px; background-color:#CCC; padding:10px 0;}
+
+
+/*
+header.php css   end
+*/
+
+
+.Runningtext{ 
+    font-size:13px; 
+    font-family:Arial, Helvetica, sans-serif; 
+    color:#838383; margin-top:20px;
+
+}
+
+.Runningtext-Box{
+    position: relative;
+    background: #fff;
+    padding: 30px 30px 30px 30px;
+}
+
+
+
+
+.Register-Page{ background-color:#ffffff; padding:10px;
+
+}
+.Register-Page-Left{ 
+    border-right:1px solid #eaeaea; padding:20px;
+
+}
+.Register-Page-Right{
+    padding:20px; margin-top:0px;
+}
+
+
+.Register-Page-Row{ 
+    margin-bottom:20px; 
+}
+
+.Register-Page-Right-Row{ 
+    border-bottom:1px solid #eaeaea; padding-bottom:5px; margin-bottom:10px; font-size:18px; line-height:45px;}
+
+.YourProfileRow{ 
+    margin-bottom:20px;
+
+}
+.font-f{ font-size:25px; color:#01b7f2;
+
+}
+
+
+
+.Faqs-Left{
+
+}
+.Faqs-Right{ 
+    background-color: #fafafa; 
+    border-radius: 6px;  
+    padding:20px; 
+    border:1px solid #dedede;	
+}
+
+.Contact-Row{ margin-bottom:20px;}
+
+
+.Select-Origin-Div{ width:140px;
+}
+.Select-Origin-Div2{ width:103px;
+}
+
+
+.ModifySearchBox{ 
+    background-color:#fff; 
+    padding:5px; 
+    margin-bottom:25px;
+}
+
+
+.flight-brd{ 
+    border:1px solid #ddd !important; 
+    background-color:#F5F5F5 !important; margin-bottom:10px; margin-right:10px;}
+
+
+
+.datepicker-wrap .ui-datepicker-trigger2 {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 1;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;}
+
+.s-title2{ color:#00a3d1;}
+
+@media only screen and (min-width : 320px) {
+
+    .travelo-signup-box, .travelo-login-box1{ width:100%;}
+    .My-Account-header{ text-align:center;}
+
+    .travelo-signup-box, .travelo-box2-login{ width:100% !important;}
+    .travelo-signup-box, .travelo-box2-register{ width:100% !important;}
+
+    .search-form{
+        top: 20px !important;
+    }
+    .search-tab-content{ color:#ffffff !important;}
+    .search-form input.input-text, select, textarea, span.custom-select{ color:#000 !important;}
+
+
+    .Select-Origin-Div{ width:100%;
+    }
+    .Select-Origin-Div2{ width:100%;
+    }
+}
+
+@media only screen and (min-width : 480px) {
+
+    .travelo-signup-box, .travelo-login-box1{ width:100%;}
+    .My-Account-header{ text-align:center;}
+
+    .travelo-signup-box, .travelo-box2-login{ width:100% !important;}
+    .travelo-signup-box, .travelo-box2-register{ width:100% !important;}
+
+    .search-form{
+        top: 20px !important;
+    }
+    .search-tab-content{ color:#ffffff !important;}
+    .search-form input.input-text, select, textarea, span.custom-select{ color:#000 !important;}
+
+    .Select-Origin-Div{ width:100%;
+    }
+    .Select-Origin-Div2{ width:100%;
+    }
+
+}
+
+@media only screen and (min-width : 768px) {
+
+    .travelo-signup-box, .travelo-login-box1{ width:100%;}
+    .My-Account-header{ text-align:center;}
+
+    .travelo-signup-box, .travelo-box2-login{ width:100% !important;}
+    .travelo-signup-box, .travelo-box2-register{ width:100% !important;}
+
+
+    .search-form{
+        top: 30px !important;
+    }
+
+    .search-tab-content{ color:#ffffff !important;}
+
+    .search-form input.input-text, select, textarea, span.custom-select{ color:#000 !important;}
+
+
+    .Select-Origin-Div{ width:130px;
+    }
+    .Select-Origin-Div2{ width:103px;
+    }
+
+}
+
+@media only screen and (min-width : 992px) {
+
+    .travelo-signup-box, .travelo-login-box1{ width:100%;}
+    .My-Account-header{ text-align:right;}
+
+    .travelo-signup-box, .travelo-box2-login{ width:300px !important;}
+    .travelo-signup-box, .travelo-box2-register{ width:500px !important;}
+
+
+    .search-form{
+        top: 285px !important;
+    }
+
+    .search-tab-content{ color:#ffffff !important;}
+
+    .search-form input.input-text, select, textarea, span.custom-select{ color:#000 !important;}
+
+    .Select-Origin-Div{ width:140px;
+    }
+    .Select-Origin-Div2{ width:103px;
+    }
+
+}
+
+
+@media only screen and (min-width : 1200px) {
+
+    .travelo-signup-box, .travelo-login-box1{ width:400px;}
+    .My-Account-header{ text-align:right;}
+
+    .travelo-signup-box, .travelo-box2-login{ width:300px !important;}
+    .travelo-signup-box, .travelo-box2-register{ width:500px !important;}
+
+    .search-form{
+        top: 285px !important;
+    }
+    .search-tab-content{ color:#ffffff !important;}
+
+    .search-form input.input-text, select, textarea, span.custom-select{ color:#000 !important;}
+
+    .Select-Origin-Div{ width:130px;
+    }
+    .Select-Origin-Div2{ width:103px;
+    }
+
+}

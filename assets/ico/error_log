@@ -1,0 +1,1 @@
+[28-May-2016 10:50:23 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/easeyatra/public_html/yatra/assets/ico/flight_list.php on line 36

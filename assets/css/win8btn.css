@@ -1,0 +1,150 @@
+.btn-container {
+  display: inline-block;
+  perspective: 800px; 
+  width: 30%;
+  margin-bottom:  30px;
+}
+
+.win8btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 20px 30px;
+  background-color: #E67F3C;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  animation-duration: 0.2s;
+  border: none;
+  box-shadow: 3px 3px 3px -1px #ccc; 
+  width:  250px;
+  height: 100px;
+  display: flex;
+  float: none;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+  .win8btn, .win8btn a, .win8btn a:hover {
+    text-decoration: none !important; }
+  .win8btn.left {
+    animation-name: win8btn_left;
+    transform-origin: 100% 50%; }
+  .win8btn.right {
+    animation-name: win8btn_right;
+    transform-origin: 0 50%; }
+  .win8btn.top {
+    animation-name: win8btn_top;
+    transform-origin: 50% 100%; }
+  .win8btn.bottom {
+    animation-name: win8btn_bottom;
+    transform-origin: 50% 0; }
+  .win8btn.center {
+    transform-origin: center;
+    animation: win8btn_center 0.2s; }
+  .win8btn.topleft {
+    transform-origin: 100% 100%;
+    animation: win8btn_topleft 0.2s; }
+  .win8btn.topright {
+    transform-origin: 0 100%;
+    animation: win8btn_topright 0.2s; }
+  .win8btn.bottomleft {
+    transform-origin: 100% 0;
+    animation: win8btn_bottomleft 0.2s; }
+  .win8btn.bottomright {
+    transform-origin: 0 0;
+    animation: win8btn_bottomright 0.2s; }
+
+.btn-container:nth-of-type(6n+1) .win8btn {
+  background: #ff7979; 
+}
+.btn-container:nth-of-type(6n+2) .win8btn {
+  background: #8def52; 
+}
+.btn-container:nth-of-type(6n+3) .win8btn {
+  background: #ed4ad4; 
+}
+.btn-container:nth-of-type(6n+4) .win8btn {
+  background: #00fff6; 
+}
+.btn-container:nth-of-type(6n+5) .win8btn {
+  background: #feee97; 
+}
+.btn-container:nth-of-type(6n+6) .win8btn {
+  background: #ff8700; 
+}
+.btn-container:nth-of-type(6n+7) .win8btn {
+  background: #8740bb; 
+}
+.btn-container:nth-of-type(6n+8) .win8btn {
+  background: #cccccc; 
+}
+.btn-container:nth-of-type(6n+9) .win8btn {
+  background:#D165BD; 
+}
+
+@keyframes win8btn_left {
+  0% {
+    transform: rotateY(0deg); }
+  50% {
+    transform: rotateY(-15deg); }
+  100% {
+    transform: rotateY(0deg); } }
+@keyframes win8btn_right {
+  0% {
+    transform: rotateY(0deg); }
+  50% {
+    transform: rotateY(15deg); }
+  100% {
+    transform: rotateY(0deg); } }
+@keyframes win8btn_top {
+  0% {
+    transform: rotateX(0deg); }
+  50% {
+    transform: rotateX(25deg); }
+  100% {
+    transform: rotateX(0deg); } }
+@keyframes win8btn_bottom {
+  0% {
+    transform: rotateX(0deg); }
+  50% {
+    transform: rotateX(-25deg); }
+  100% {
+    transform: rotateX(0deg); } }
+@keyframes win8btn_center {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.95); }
+  100% {
+    transform: scale(1); } }
+@keyframes win8btn_topleft {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: rotateX(15deg) rotateY(-5deg); }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg); } }
+@keyframes win8btn_topright {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: rotateX(15deg) rotateY(5deg); }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg); } }
+@keyframes win8btn_bottomleft {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: rotateX(-15deg) rotateY(-5deg); }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg); } }
+@keyframes win8btn_bottomright {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: rotateX(-15deg) rotateY(5deg); }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg); } }

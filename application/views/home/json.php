@@ -1,0 +1,5 @@
+{"Authentication":
+    {"LoginId":"CrestCosmos","Password":"CrestCosmos123"},"UserTrackId":"RMOPL97099949973897984885277289825837113",
+	"BookInput":{"CustomerDetails":{"Title":"Mr","Name":"Aditya","Address":"indra nagar","City":"Lucknow","CountryId":"91","ContactNumber":"9844100866","EmailId":"90adityarn@gmail.com","PinCode":"226016"},"SpecialRemarks":"100","NotifyByMail":0,"NotifyBySMS":0,"AdultCount":1,"ChildCount":0,"InfantCount":0,"BookingType":"O","TotalAmount":10748,"FrequentFlyerRequest":null,"SpecialServiceRequest":null,"FSCMealsRequest":null,"FlightBookingDetails":[{"AirlineCode":"6E","PaymentDetails":{"CurrencyCode":"INR","Amount":10748},"TourCode":"","PassengerDetails":[{"PassengerType":"ADULT","Title":"Mr","FirstName":"Aditya","LastName":"Kumar","Gender":"M","Age":28,"DateofBirth":"12\/01\/1990","IdentityProofId":"","IdentityProofNumber":"","BookingSegments":[{"FlightId":"91","ClassCode":"D","SpecialServiceCode":"","FrequentFlyerId":"","FrequentFlyerNumber":"","MealCode":"","SeatPreferId":""}],"LCCBaggageRequest":null,"LCCMealsRequest":null}]}]}}
+
+
