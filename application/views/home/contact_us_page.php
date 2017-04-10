@@ -10,26 +10,27 @@
         </div>
         <div class="col-md-6">
             <p>By using new methods and advanced technology, we can offer the lowest fares and highest standard of service in travel today. KPHolidays only think about how to satisfy you, no matter how long it takes, or how low they get your fare.</p>
-            <form class="mt30">
+            <?=$this->session->flashdata('msg')?>
+            <form class="mt30" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" />
+                            <label>Full Name</label>
+                            <input class="form-control" name="fullname" required="required" value="<?php echo (set_value('fullname') == false) ? set_value('fullname'): ''; ?>" type="text" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>E-mail</label>
-                            <input class="form-control" type="text" />
+                            <input class="form-control" name="email" required="required" value="<?php echo (set_value('email') == false) ? set_value('email') : ''; ?>" type="email" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" name="message" required="required" minlength="10" maxlength="500"><?php echo (set_value('message') == false) ? set_value('message') : ''; ?></textarea>
                 </div>
-                <input class="btn btn-primary" type="submit" value="Send Message" />
+                <input class="btn btn-primary" type="submit" name="send" value="Send Message" />
             </form>
         </div>
         <div class=" clearfix"></div>

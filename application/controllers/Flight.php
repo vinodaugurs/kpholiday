@@ -2172,6 +2172,8 @@ class Flight extends CI_Controller {
                 echo $result;
                 die;
             }
+            write_file(APPPATH.'/request_log.txt', json_encode($data));
+            write_file(APPPATH.'/response_log.txt', $result);
             $result = json_decode($result, true);
 
             if ($result['ResponseStatus']) {

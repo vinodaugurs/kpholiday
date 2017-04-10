@@ -259,7 +259,7 @@ $len = @count($hotel_data['soapBody']['HotelSearchResponse']['HotelSearchResult'
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-                                        <span class="booking-item-price-from">from</span>
+                                        <span class="booking-item-price-from">Avg</span>
                                         <span class="booking-item-price" style="font-size:28px;"><i class="fa fa-inr"></i> <?=round(($hotel['LowRate'] + $hotel['Highrate']) / 2); ?></span>
                                         <span class="btn btn-primary clickme">Book Now</span>
                                     </div>

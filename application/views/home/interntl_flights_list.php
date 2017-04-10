@@ -266,10 +266,8 @@ $lenFSC = @count($flight_dataFSC['FSCAvailabilityOutput']['AvailableFlights']);
                         </li>
                         <?php
                     }
-                } else {
-                    ?>
-                    <li><h3 align="center">Sorry! No direct flight available on this route!</h3></li>
-                <?php } ?>
+                }
+                ?>
                 <!--CODE FOR OTHER AVAILABLE FLIGHT-->
                 <?php
                 if ($flight_dataFSC['ResponseStatus'] == 1) {
@@ -414,7 +412,12 @@ $lenFSC = @count($flight_dataFSC['FSCAvailabilityOutput']['AvailableFlights']);
                         </li>
                         <?php
                     }
-                } ?>                
+                } ?>
+                <?php
+                if(($len + $lenFSC)==0) {
+                ?>
+                    <li><h3 align="center">Sorry! Direct Flight is not available on this Route !</h3></li>
+                <?php } ?>
             </ul>
         </div>        
     </div>

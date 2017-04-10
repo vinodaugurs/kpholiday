@@ -6,13 +6,27 @@ class Home extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('package_rating_model');
+        $this->load->model("package_rating_model");
+        $this->load->model('sendmail_model');
+        $this->load->helper("date");
     }
 
     public function index() {
         $destinations = $this->user_model->destinations();
         $packages = $this->pack_model->packeges();
-        $this->load->view('blocks/header');
-        $this->load->view('home/home', array('destinations' => $destinations, 'packages' => $packages));
+        $pack_last_deal = $this->package_rating_model->getLastDeal();
+        if(!empty($pack_last_deal)){
+            //$data['reviews'] = $this->package_rating_model->getAllReview($pack_last_deal["package_id"]);
+            $pack_detail = $this->pack_model->pack_details($pack_last_deal[0]["package_id"]);
+            $data['pack_detail'] = $pack_detail[0];
+            $data['pack_last_deal'] = $pack_last_deal[0];
+            $data['review_rating'] = $this->package_rating_model->getReviewAvg($pack_last_deal[0]["package_id"]);
+        }
+        $data["destinations"] = $destinations;
+        $data["packages"] = $packages;
+        $this->load->view('blocks/header', $data);
+        $this->load->view('home/home');
         $this->load->view('blocks/footer');
     }
 
@@ -301,7 +315,6 @@ class Home extends CI_Controller {
 
     public function package_detail($id) {
         
-        $this->load->model("package_rating_model");
         $data['detail'] = $this->pack_model->pack_details($id);
         //$data['facilities'] = $this->pack_model->get_facilities();
         $data['reviews'] = $this->package_rating_model->getAllReview($id);
@@ -448,6 +461,23 @@ class Home extends CI_Controller {
 
     public function contactuspage() {
         $data['data'] = array();
+        
+        if($this->input->post('send')=="Send Message"){
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('fullname', 'Full Name', 'required|trim');
+            $this->form_validation->set_rules('email', 'Email', 'required|trim');
+            $this->form_validation->set_rules('message', 'Message', 'required|trim');
+            if ($this->form_validation->run()) {
+                $fullname = $this->input->post("fullname");
+                $email = $this->input->post("email");
+                $message = $this->input->post("message");
+                $this->sendmail_model->send_mail2($email, $fullname, " marketing@kpholidays.com", "Enquiry", $message);
+                $this->session->set_flashdata('msg', '<div class="alert alert-success" style="color:black"><strong>Success!</strong> Your message send successfully.</div>');
+            }else{
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger" style="color:black"><strong>Error!</strong> All fields are required.</div>');
+            }
+        }
+        
         $this->load->view('blocks/header', $data);
         $this->load->view('home/contact_us_page');
         $this->load->view('blocks/footer');
@@ -1311,9 +1341,6 @@ class Home extends CI_Controller {
 
             $url = base_url('index.php/home/forget_url_link/' . $randomUrl . '/' . $data[0]['uid']);
 
-
-            $this->load->model('sendmail_model');
-
             $msg1['Activation Link'] = urldecode($url);
             $data['msgData'] = $msg1;
             $msg = $this->load->view('email/forgot', $data, true);
@@ -1367,7 +1394,6 @@ class Home extends CI_Controller {
     }
 
     public function testsendmail() {
-        $this->load->model('sendmail_model');
         $sendetails['Email'] = "abc@abc.com";
         $sendetails['UserID'] = '5453';
         $sendetails['Password'] = '1234567';

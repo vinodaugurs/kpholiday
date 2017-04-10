@@ -436,8 +436,10 @@ $Rlen = @count($flight_data['AvailabilityOutput']['AvailableFlights']['ReturnFli
                         <?php
                     }
                     echo "</div>";
-                } else {
-                    ?>
+                }?>
+                <?php
+                if(($Olen + $Rlen)==0) {
+                ?>
                     <li><h3 align="center">Sorry! Direct Flight is not available on this Route !</h3></li>
                 <?php } ?>
             </ul>

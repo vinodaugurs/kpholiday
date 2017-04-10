@@ -1085,8 +1085,8 @@ class Hotel extends CI_Controller
             
             $CheckInarray = explode("/", $search_post['checkin']);
             $CheckOutarray = explode("/", $search_post['checkout']);
-            $checkInBooking = $CheckInarray[1] . '/' . $CheckInarray[2] . '/' . $CheckInarray[0];
-            $checkOutBooking = $CheckOutarray[1] . '/' . $CheckOutarray[2] . '/' . $CheckOutarray[0];
+            $checkInBooking = $CheckInarray[0] . '/' . $CheckInarray[1] . '/' . $CheckInarray[2];
+            $checkOutBooking = $CheckOutarray[0] . '/' . $CheckOutarray[1] . '/' . $CheckOutarray[2];
             $CheckIn = strtotime($CheckInarray[1] . '/' . $CheckInarray[1] . '/' . $CheckInarray[0]);
             $CheckOut = strtotime($CheckOutarray[1] . '/' . $CheckOutarray[1] . '/' . $CheckOutarray[0]);
             
@@ -1135,7 +1135,7 @@ class Hotel extends CI_Controller
 
             //set booking xml
 
-
+            
             $tdata = array();
             $tdata['SearchId'] = $Searchid;
             $tdata['bookingkey'] = urldecode($Bookingkey);
@@ -1156,11 +1156,10 @@ class Hotel extends CI_Controller
             $tdata['mobile'] = $mobile;
             $tdata['email'] = $email;
             $tdata['Bookingkey'] = urldecode($Bookingkey);
-            $tdata['PaxInfo'] = $PaxInfo;
+            $tdata['PaxInfo'] = $PaxInfo;            
 
             if ($TrackId != NULL) {
                 $tdata['UserTrackID'] = $TrackId;
-                write_file(APPPATH.'/track_log.txt', $TrackId);
                 $responsdata = $this->HotelBookingIntl($tdata);
             }
 
@@ -1313,12 +1312,8 @@ class Hotel extends CI_Controller
         $this->Credentials['apiurl'] = $this->Credentials['apiurlInterntl'];
         $responsdata = $this->soapPost($method, $xmlRequest);
         $responsdata = $this->xml_to_array($responsdata);
-        write_file(APPPATH.'/response_log.txt', $responsdata);
-//        echo '<pre>';
-//        echo $method;
-//        echo print_r($this->xml_to_array($xmlRequest));
-//        print_r($responsdata);
-//        exit;
+        write_file(APPPATH.'/request_log.txt', $xmlRequest);
+        write_file(APPPATH.'/response_log.txt', json_encode($responsdata));
         
         if (isset($responsdata['soapBody']['BookingConfirmationResponse']['BookingConfirmationResult']['BookingInformation']['Status']) && $responsdata['soapBody']['BookingConfirmationResponse']['BookingConfirmationResult']['BookingInformation']['Status'] == 0) {
             $this->saveBookingInt($responsdata['soapBody']['BookingConfirmationResponse']['BookingConfirmationResult']['BookingInformation']['BookingID'], $xmlRequest, $RoomTypeID);
@@ -1595,7 +1590,6 @@ class Hotel extends CI_Controller
             die;
         }
         */
-        write_file(APPPATH.'/request_log.txt', $xmlRequest);
         $this->bookingProcessInt('HotelBooking', $data['UserTrackID'], $xmlRequest);
         // $responsdata=$this->soapPost('HotelBooking',$xmlRequest);
         //  return $responsdata=$this->xml_to_array($responsdata);

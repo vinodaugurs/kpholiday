@@ -149,7 +149,7 @@ $Searchid = @$hotel_data['soapBody']['SearchHotelsResponse']['SearchHotelsResult
                                             <p><?= $attributes['HotelDesc'] ?></p>
                                         </div>
                                     </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span>
+                                    <div class="col-md-3"><span class="booking-item-price-from">Avg</span>
                                         <span class="booking-item-price" style="font-size:28px;"><i class="fa fa-inr"></i> <?php echo $attributes['GIAvgAmount']; ?></span> <span class="btn btn-primary"> Book Now</span>
                                     </div>
                                 </div>

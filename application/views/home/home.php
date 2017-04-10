@@ -408,6 +408,7 @@
     </div>
     <div class="gap gap-small"></div>
 </div>
+<?php if(!empty($pack_last_deal)){ ?>
 <div class="bg-holder">
     <div class="bg-mask"></div>
     <div class="bg-parallax"
@@ -417,25 +418,25 @@
             <div class="gap gap-big text-center text-white">
                 <h2 class="text-uc mb20">Last Minute Deal</h2>
                 <ul class="icon-list list-inline-block mb0 last-minute-rating">
-                    <li><i class="fa fa-star"></i>
-                    </li>
-                    <li><i class="fa fa-star"></i>
-                    </li>
-                    <li><i class="fa fa-star"></i>
-                    </li>
-                    <li><i class="fa fa-star"></i>
-                    </li>
-                    <li><i class="fa fa-star"></i>
-                    </li>
+                    <?php
+                        for($i = 1; $i <= 5; $i++) {
+                            if($i<=round($review_rating["rating_average"])) {
+                                echo "<li class='fa fa-star'></li>";
+                            } else {
+                                echo "<li class='fa fa-star-o'></li>";
+                            }
+                        }
+                    ?>
                 </ul>
-                <h5 class="last-minute-title">The Back Waters - Kerala</h5>
-                <p class="last-minute-date">Fri 24 Mar - Sun 05 Apr</p>
-                <p class="mb20"><b>Rs.5000</b> / person</p>
-                <a class="btn btn-white btn-ghost mt10" style="color: #FFFFFF;" href="javascript:void();"><i class="fa fa-angle-right"></i> Book Now</a>
+                <h5 class="last-minute-title"><?=$pack_last_deal["package_name"]?> - <?=$pack_last_deal["country"]?></h5>
+                <p class="last-minute-date"><?=$better_date = nice_date($pack_last_deal["date"], 'Y M d');?></p>
+                <p class="mb20"><b><i class="fa fa-inr"></i><?="&nbsp;" . $pack_detail['price']?></b> / person</p>
+                <a class="btn btn-white btn-ghost mt10" style="color: #FFFFFF;" href="<?php echo site_url('home/package_detail/' . $pack_detail['pack_id']); ?>"><i class="fa fa-angle-right"></i> Book Now</a>
             </div>
         </div>
     </div>
 </div>
+<?php } ?>
 <div class="container">
     <div class="gap"></div>
     <h2 class="text-center">Top Destinations</h2>

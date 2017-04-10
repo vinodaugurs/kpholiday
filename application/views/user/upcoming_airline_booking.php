@@ -160,15 +160,15 @@
                     // echo implode(" ", $PassengerDetail);
                     // print_r($PassengerDetail);  
                     ?>
-                    <label>AirlineCode :</label>
+                    <label>Airline Code :</label>
                     <span>
                         <?= $PassengerDetail[0]['AirlineCode'] ?>
                     </span><br/>
-                    <label>AirlinePNR :</label>
+                    <label>Airline PNR :</label>
                     <span>
                         <?= $PassengerDetail[0]['AirlinePNR'] ?>
                     </span><br/>
-                    <label>AirlineName :</label>
+                    <label>Airline Name :</label>
                     <span>
                         <?= $PassengerDetail[0]['AirlineName'] ?>
                     </span><br/>
@@ -184,7 +184,7 @@
                     <span>
                         <?= $PassengerDetail[0]['City'] ?>
                     </span><br/>
-                    <label>ContactNumber :</label>
+                    <label>Contact Number :</label>
                     <span>
                         <?= $PassengerDetail[0]['ContactNumber'] ?>
                     </span><br/>
@@ -300,34 +300,34 @@
                                     <input type="hidden" name="TravelType" id="TravelType" value="" />
                                     <button type="submit" name="booking" value="confirm" class="full-width btn-large btn btn-danger">CONFIRM CANCEL</button>
                                 </div>
-                            </div>
+                            </div>                    
+                        </div>
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-    $(".ftcancel").click(function ()
-    {
-        $("#hermspnr").val($(this).data('hermespnr'));
+    <script>
+        $(".ftcancel").click(function ()
+        {
+            $("#hermspnr").val($(this).data('hermespnr'));
 
-        $("#TravelType").val($(this).data('traveltype'));
-        $('#cancelmodel').modal('show');
+            $("#TravelType").val($(this).data('traveltype'));
+            $('#cancelmodel').modal('show');
 
-        var obj = jQuery.parseJSON($(this).parent().find('.AirlinePNRs').html());
-        $('#AirlinePNR').html('<option value="" selected="selected">--Select Flight--</option>');
-        $.each(obj, function (idx, obj) {
+            var obj = jQuery.parseJSON($(this).parent().find('.AirlinePNRs').html());
+            $('#AirlinePNR').html('<option value="" selected="selected">--Select Flight--</option>');
             $.each(obj, function (idx, obj) {
-                //console.log(obj.AirlinePNR);
+                $.each(obj, function (idx, obj) {
+                    //console.log(obj.AirlinePNR);
 
-                $('#AirlinePNR').append('<option value="' + obj.AirlinePNR + '">' + obj.AirlinePNR + ' ' + obj.AirlineCode + '-' + obj.AirlineName + '</option>');
+                    $('#AirlinePNR').append('<option value="' + obj.AirlinePNR + '">' + obj.AirlinePNR + ' ' + obj.AirlineCode + '-' + obj.AirlineName + '</option>');
+                });
             });
-        });
 
-    });
-</script> 
-<?php include APPPATH . 'views/home/footer.php'; ?>
+        });
+    </script> 
+    <?php include APPPATH . 'views/home/footer.php'; ?>
